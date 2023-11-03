@@ -1,7 +1,8 @@
+#pragma once
 #include <Box2D/box2d.h>
 #include <SFML/System/Vector2.hpp>
 #include "Component.h"
-#pragma once
+
 namespace CH {
 	class Rigidbody : public CH::Component
 	{

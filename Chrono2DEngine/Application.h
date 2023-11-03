@@ -4,6 +4,7 @@
 #include "pch.h"
 #include "Entity.h"
 #include "Physics.h"
+#include "LuaScript.h"
 
 namespace CH {
 	class Application
@@ -39,6 +40,7 @@ namespace CH {
 	protected:
 		std::vector<CH::Entity*> _entities;
 		Physics _physics;
+		LuaScript _luaScript;
 		static Application* _instance;
 	};
 }

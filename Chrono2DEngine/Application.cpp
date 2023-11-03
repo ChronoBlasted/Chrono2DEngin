@@ -8,6 +8,9 @@ CH::Application* CH::Application::_instance = nullptr;
 CH::Application::Application()
 {
 	_instance = this;
+
+
+
 }
 
 CH::Application::~Application()

@@ -34,3 +34,4 @@ void CH::Collider::SetFriction(float newFriction)
 		_fixture->SetFriction(newFriction);
 	}
 }
+

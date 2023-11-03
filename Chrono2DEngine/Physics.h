@@ -1,5 +1,7 @@
-#include <Box2D/box2d.h>
 #pragma once
+#include <Box2D/box2d.h>
+#include "CollisionListener.h"
+
 namespace CH {
 	class Physics
 	{
@@ -15,6 +17,7 @@ namespace CH {
 	protected:
 		b2Vec2 _gravity;
 		b2World _world;
+		CollisionListener _collisionListener;
 	private:
 	};
 }

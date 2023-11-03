@@ -1,5 +1,6 @@
-#include "Collider.h"
 #pragma once
+#include "Collider.h"
+
 namespace CH {
 	class BoxCollider : public CH::Collider
 	{

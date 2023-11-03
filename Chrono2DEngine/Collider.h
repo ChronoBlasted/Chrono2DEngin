@@ -1,7 +1,7 @@
+#pragma once
 #include <Box2D/box2d.h>
 #include "Component.h"
 
-#pragma once
 namespace CH {
 	class Collider : public CH::Component
 	{
@@ -14,6 +14,7 @@ namespace CH {
 
 		void SetDensity(float newDensity);
 		void SetFriction(float newFriction);
+
 	protected:
 		b2FixtureDef _fixtureDef;
 		b2Fixture* _fixture;

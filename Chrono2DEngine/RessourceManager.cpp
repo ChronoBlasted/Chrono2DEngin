@@ -5,7 +5,6 @@
 #include <fstream>
 #include <windows.h>
 
-
 CH::RessourceManager* CH::RessourceManager::_instance = nullptr;
 
 void CH::RessourceManager::Init()

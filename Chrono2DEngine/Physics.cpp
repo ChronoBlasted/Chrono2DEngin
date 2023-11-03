@@ -6,6 +6,7 @@
 
 CH::Physics::Physics() : _gravity(0, 10), _world(_gravity)
 {
+	_world.SetContactListener(&_collisionListener);
 }
 
 CH::Physics::~Physics()

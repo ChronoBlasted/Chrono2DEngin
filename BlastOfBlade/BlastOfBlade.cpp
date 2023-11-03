@@ -5,6 +5,7 @@
 #include <Chrono2DEngine/Camera.h>
 #include <Chrono2DEngine/Rigidbody.h>
 #include <Chrono2DEngine/BoxCollider.h>
+#include <Chrono2DEngine/CollisionChecker.h>
 
 int main()
 {
@@ -50,6 +51,7 @@ int main()
 
 	circleBoxCollider->CreateFixture(circleRigidbody->GetBody());
 
+	CH::CollisionChecker* collisionChecker = app->CreateComponent<CH::CollisionChecker>(*circleEntity);
 
 	app->Loop();
 

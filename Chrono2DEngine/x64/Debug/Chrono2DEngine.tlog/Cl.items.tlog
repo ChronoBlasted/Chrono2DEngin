@@ -2,9 +2,13 @@ C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Application.cpp;C:\Use
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\BoxCollider.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\BoxCollider.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Camera.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Camera.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Collider.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Collider.obj
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Collision.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Collision.obj
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\CollisionChecker.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\CollisionChecker.obj
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\CollisionListener.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\CollisionListener.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Component.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Component.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Chrono2DEngine.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Chrono2DEngine.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Entity.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Entity.obj
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\ICollisionable.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\ICollisionable.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\pch.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\pch.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\Physics.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\Physics.obj
 C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\RessourceManager.cpp;C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\x64\Debug\RessourceManager.obj
