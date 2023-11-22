@@ -6,6 +6,9 @@ namespace CH {
 	class RessourceManager
 	{
 	public:
+		RessourceManager();
+		~RessourceManager();
+
 		void Init();
 		std::string GetPathById(std::string key);
 

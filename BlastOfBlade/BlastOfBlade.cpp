@@ -6,6 +6,7 @@
 #include <Chrono2DEngine/Rigidbody.h>
 #include <Chrono2DEngine/BoxCollider.h>
 #include <Chrono2DEngine/CollisionChecker.h>
+#include <Chrono2DEngine/TextMeshPro.h>
 
 int main()
 {
@@ -14,8 +15,12 @@ int main()
 	app->Init(2000, 1000, "Chrono2DEngine");
 
 	CH::Entity* groundEntity = app->CreateEntity("Ground");
-	CH::SpriteRenderer* spriteRendererSquare = app->CreateComponent<CH::SpriteRenderer>(*groundEntity);
-	spriteRendererSquare->SetTexture("Square");
+	//CH::SpriteRenderer* spriteRendererSquare = app->CreateComponent<CH::SpriteRenderer>(*groundEntity);
+	//spriteRendererSquare->SetTexture("Square");
+
+	CH::TextMeshPro* textMeshPro = app->CreateComponent<CH::TextMeshPro>(*groundEntity);
+	std::string str1 = "Square";
+	textMeshPro->SetString(str1);
 
 	CH::Rigidbody* groundRigidbody = app->CreateComponent<CH::Rigidbody>(*groundEntity);
 	b2Vec2 groundPos;

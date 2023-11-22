@@ -1,6 +1,51 @@
-﻿  Camera.cpp
+﻿  Application.cpp
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,44): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'YAML::Exception'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\stdexcept(101,19): message : voir la déclaration de 'std::runtime_error'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,20): message : voir la déclaration de 'YAML::Exception'
+  Camera.cpp
+  Collision.cpp
+  CollisionListener.cpp
+  Component.cpp
+  Entity.cpp
   LuaScript.cpp
-C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\LuaScript.h(9,12): error C2143: erreur de syntaxe : absence de ';' avant '*'
-C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\LuaScript.h(9,12): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\LuaScript.h(9,22): error C2238: jetons inattendus avant ';'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,44): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'YAML::Exception'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\stdexcept(101,19): message : voir la déclaration de 'std::runtime_error'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,20): message : voir la déclaration de 'YAML::Exception'
+  Physics.cpp
+  RessourceManager.cpp
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\parser.h(85,28): warning C4251: 'YAML::Parser::m_pScanner' : class 'std::unique_ptr<YAML::Scanner,std::default_delete<YAML::Scanner>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Parser'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\parser.h(85,8): message : voir la déclaration de 'std::unique_ptr<YAML::Scanner,std::default_delete<YAML::Scanner>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\parser.h(86,31): warning C4251: 'YAML::Parser::m_pDirectives' : class 'std::unique_ptr<YAML::Directives,std::default_delete<YAML::Directives>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Parser'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\parser.h(86,8): message : voir la déclaration de 'std::unique_ptr<YAML::Directives,std::default_delete<YAML::Directives>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\binary.h(65,30): warning C4251: 'YAML::Binary::m_data' : class 'std::vector<unsigned char,std::allocator<unsigned char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Binary'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\binary.h(18,19): message : voir la déclaration de 'std::vector<unsigned char,std::allocator<unsigned char>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\ostream_wrapper.h(49,29): warning C4251: 'YAML::ostream_wrapper::m_buffer' : class 'std::vector<char,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::ostream_wrapper'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\ostream_wrapper.h(49,16): message : voir la déclaration de 'std::vector<char,std::allocator<char>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\emitter.h(132,33): warning C4251: 'YAML::Emitter::m_pState' : class 'std::unique_ptr<YAML::EmitterState,std::default_delete<YAML::EmitterState>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Emitter'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\emitter.h(132,8): message : voir la déclaration de 'std::unique_ptr<YAML::EmitterState,std::default_delete<YAML::EmitterState>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,44): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'YAML::Exception'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\stdexcept(101,19): message : voir la déclaration de 'std::runtime_error'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,20): message : voir la déclaration de 'YAML::Exception'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(162,15): warning C4251: 'YAML::Exception::msg' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Exception'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5119,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\node.h(135,15): warning C4251: 'YAML::Node::m_invalidKey' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Node'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5119,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\node.h(136,40): warning C4251: 'YAML::Node::m_pMemory' : class 'std::shared_ptr<YAML::detail::memory_holder>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::Node'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\ptr.h(24,35): message : voir la déclaration de 'std::shared_ptr<YAML::detail::memory_holder>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\memory.h(31,9): warning C4251: 'YAML::detail::memory::m_nodes' : class 'std::set<YAML::detail::shared_node,std::less<YAML::detail::shared_node>,std::allocator<YAML::detail::shared_node>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::memory'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\memory.h(30,22): message : voir la déclaration de 'std::set<YAML::detail::shared_node,std::less<YAML::detail::shared_node>,std::allocator<YAML::detail::shared_node>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\memory.h(42,17): warning C4251: 'YAML::detail::memory_holder::m_pMemory' : class 'std::shared_ptr<YAML::detail::memory>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::memory_holder'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\ptr.h(25,28): message : voir la déclaration de 'std::shared_ptr<YAML::detail::memory>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_data.h(104,15): warning C4251: 'YAML::detail::node_data::m_tag' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::node_data'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5119,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_data.h(108,15): warning C4251: 'YAML::detail::node_data::m_scalar' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::node_data'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5119,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_data.h(112,12): warning C4251: 'YAML::detail::node_data::m_sequence' : class 'std::vector<YAML::detail::node *,std::allocator<YAML::detail::node *>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::node_data'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_iterator.h(39,23): message : voir la déclaration de 'std::vector<YAML::detail::node *,std::allocator<YAML::detail::node *>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_data.h(118,12): warning C4251: 'YAML::detail::node_data::m_map' : class 'std::vector<std::pair<YAML::detail::node *,YAML::detail::node *>,std::allocator<std::pair<YAML::detail::node *,YAML::detail::node *>>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::node_data'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_iterator.h(40,23): message : voir la déclaration de 'std::vector<std::pair<YAML::detail::node *,YAML::detail::node *>,std::allocator<std::pair<YAML::detail::node *,YAML::detail::node *>>>'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_data.h(122,20): warning C4251: 'YAML::detail::node_data::m_undefinedPairs' : class 'std::list<YAML::detail::node_data::kv_pair,std::allocator<std::pair<YAML::detail::node *,YAML::detail::node *>>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'YAML::detail::node_data'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\node\detail\node_data.h(121,25): message : voir la déclaration de 'std::list<YAML::detail::node_data::kv_pair,std::allocator<std::pair<YAML::detail::node *,YAML::detail::node *>>>'
+  Rigidbody.cpp
   Génération de code en cours...
+  Chrono2DEngine.vcxproj -> C:\Users\alexi\source\repos\Chrono2DEngine\x64\Debug\Chrono2DEngine.lib

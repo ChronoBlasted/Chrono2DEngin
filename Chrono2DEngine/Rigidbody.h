@@ -19,6 +19,7 @@ namespace CH {
 		float GetAngle();
 		b2Vec2 GetLinearVelocity();
 		float GetAngularVelocity();
+
 		b2Body* GetBody();
 	protected:
 		b2BodyDef _bodyDef;

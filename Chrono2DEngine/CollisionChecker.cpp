@@ -3,7 +3,7 @@
 
 void CH::CollisionChecker::BeginCollision()
 {
-	std::cout << "ALEXANDRE" << std::endl;
+	std::cout << "COLLISION" << std::endl;
 }
 
 void CH::CollisionChecker::EndCollision()

@@ -7,6 +7,15 @@
 
 CH::RessourceManager* CH::RessourceManager::_instance = nullptr;
 
+CH::RessourceManager::RessourceManager()
+{
+	_instance = this;
+}
+
+CH::RessourceManager::~RessourceManager()
+{
+}
+
 void CH::RessourceManager::Init()
 {
 	LoadPath();

@@ -2,15 +2,15 @@
 #include "RessourceManager.h"
 #include "Camera.h"
 #include "SpriteRenderer.h"
+#include "InputManager.h"
+#include "AudioManager.h"
+#include "FontManager.h"
 
 CH::Application* CH::Application::_instance = nullptr;
 
 CH::Application::Application()
 {
 	_instance = this;
-
-
-
 }
 
 CH::Application::~Application()
@@ -20,6 +20,9 @@ CH::Application::~Application()
 void CH::Application::Init(int sizeX = 800, int sizeY = 600, std::string windowName = "Chrono2DEngine")
 {
 	RessourceManager::GetInstance()->Init();
+	InputManager::GetInstance()->Init();
+	AudioManager::GetInstance()->Init();
+	FontManager::GetInstance()->Init();
 
 	Window.create(sf::VideoMode(sizeX, sizeY), windowName);
 }
@@ -54,6 +57,8 @@ void CH::Application::Loop()
 		for (Entity* entity : _entities) {
 			entity->LateUpdate(deltaTime);
 		}
+
+		CH::InputManager::GetInstance()->DoInput();
 
 		_physics.Update(deltaTime);
 
