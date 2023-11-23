@@ -1,32 +1,46 @@
 #include "Input.h"
+#include <iostream>
 
-void CH::Input::SetBind(sf::Keyboard::Key keyboardInput, std::function<void()> func)
+CH::Input::Input()
 {
-	*_inputType = InputType::Keyboard;
-
-	_localFunction = func;
+	_inputType = new InputType();
 }
 
-void CH::Input::SetBind(sf::Mouse::Button mouseInput, std::function<void()> func)
+CH::Input::~Input()
 {
-	*_inputType = InputType::Mouse;
+}
 
-	_localFunction = func;
+void CH::Input::SetBind(sf::Keyboard::Key keyboardInput)
+{
+	_keyboardInput = keyboardInput;
+
+	*_inputType = InputType::Keyboard;
+}
+
+void CH::Input::SetBind(sf::Mouse::Button mouseInput)
+{
+	_mouseInput = mouseInput;
+
+	*_inputType = InputType::Mouse;
 }
 
 void CH::Input::DoBind()
 {
+	IsPressed = false;
+
 	switch (*_inputType)
 	{
 	case InputType::Keyboard:
-		if (sf::Keyboard::isKeyPressed(*_keyboardInput))
+		if (sf::Keyboard::isKeyPressed(_keyboardInput))
 		{
-			_localFunction();
+			IsPressed = true;
 		}
+		break;
 	case InputType::Mouse:
-		if (sf::Mouse::isButtonPressed(*_mouseInput))
+		if (sf::Mouse::isButtonPressed(_mouseInput))
 		{
-			_localFunction();
+			IsPressed = true;
 		}
+		break;
 	}
 }

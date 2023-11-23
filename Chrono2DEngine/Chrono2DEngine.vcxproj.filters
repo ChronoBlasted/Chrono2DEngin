@@ -87,6 +87,9 @@
     <ClInclude Include="AudioClip.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="MovementController.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chrono2DEngine.cpp">
@@ -156,6 +159,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="AudioClip.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementController.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Component.h"
+#include <string>
 
 namespace CH {
 
@@ -13,12 +14,13 @@ namespace CH {
 		~TextMeshPro();
 
 		void SetFont(sf::Font& newFont);
-		void SetString(std::string& newString);
+		void SetString(const char* newString);
 		void SetCharacterSize(int newPixelSize);
 		void SetFillColor(sf::Color& newColor);
 		void SetTextStyle(sf::Uint32& text);
+		void SetPosition(float x, float y);
 	protected:
-		sf::Text* _text;
+		sf::Text _text;
 	private:
 	};
 }

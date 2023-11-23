@@ -16,6 +16,8 @@ namespace CH {
 		void AddInput(std::string inputName, Input* inputToAdd);
 		void RemoveInput(std::string inputName);
 
+		bool GetInput(std::string inputName);
+
 		static InputManager* GetInstance();
 
 		void DoInput();

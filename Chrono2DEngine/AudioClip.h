@@ -13,15 +13,11 @@ namespace CH {
 		void SetVolume(float newVolume);
 		void SetLoop(bool isLooping);
 
-		void PlayMusic();
-		void PauseMusic();
-		void StopMusic();
-
-		void PlaySound();
-		void PauseSound();
-		void StopSound();
+		void Play();
+		void Pause();
+		void Stop();
 	protected:
-		sf::SoundBuffer* _buffer;
+		sf::SoundBuffer _buffer;
 		sf::Sound* _sound;
 		sf::Music* _music;
 	private:

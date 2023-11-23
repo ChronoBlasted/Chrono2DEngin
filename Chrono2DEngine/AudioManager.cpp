@@ -7,7 +7,7 @@ void CH::AudioManager::PlayMusic(std::string musicName)
 	AudioClip* newAudio = new AudioClip();
 
 	newAudio->LoadMusic(musicName);
-	newAudio->PlayMusic();
+	newAudio->Play();
 
 	_allAudioClips.insert({ musicName, newAudio });
 }
@@ -17,7 +17,7 @@ void CH::AudioManager::PlaySound(std::string soundName)
 	AudioClip* newAudio = new AudioClip();
 
 	newAudio->LoadSound(soundName);
-	newAudio->PlayMusic();
+	newAudio->Play();
 
 	_allAudioClips.insert({ soundName, newAudio });
 }

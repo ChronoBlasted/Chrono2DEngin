@@ -3,11 +3,11 @@
 
 CH::TextMeshPro::TextMeshPro()
 {
-	std::string newText = "New text";
-	SetString(newText);
+	SetString("New text");
 
-	sf::Font* defaultFont = CH::FontManager::GetInstance()->GetFont("Poppins");
+	sf::Font* defaultFont = CH::FontManager::GetInstance()->GetFont("Arial");
 	SetFont(*defaultFont);
+
 	SetCharacterSize(36);
 }
 
@@ -17,30 +17,35 @@ CH::TextMeshPro::~TextMeshPro()
 
 void CH::TextMeshPro::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	target.draw(*_text, states);
+	target.draw(_text, states);
 }
 
 void CH::TextMeshPro::SetFont(sf::Font& newFont)
 {
-	_text->setFont(newFont);
+	_text.setFont(newFont);
 }
 
-void CH::TextMeshPro::SetString(std::string& newString)
+void CH::TextMeshPro::SetPosition(float x, float y)
 {
-	_text->setString(newString);
+	_text.setPosition(x, y);
+}
+
+void CH::TextMeshPro::SetString(const char* newString)
+{
+	_text.setString(newString);
 }
 
 void CH::TextMeshPro::SetCharacterSize(int newPixelSize)
 {
-	_text->setCharacterSize(newPixelSize);
+	_text.setCharacterSize(newPixelSize);
 }
 
 void CH::TextMeshPro::SetFillColor(sf::Color& newColor)
 {
-	_text->setFillColor(newColor);
+	_text.setFillColor(newColor);
 }
 
 void CH::TextMeshPro::SetTextStyle(sf::Uint32& text)
 {
-	_text->setStyle(text);
+	_text.setStyle(text);
 }

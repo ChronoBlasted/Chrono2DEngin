@@ -20,6 +20,7 @@ CH::Application::~Application()
 void CH::Application::Init(int sizeX = 800, int sizeY = 600, std::string windowName = "Chrono2DEngine")
 {
 	RessourceManager::GetInstance()->Init();
+
 	InputManager::GetInstance()->Init();
 	AudioManager::GetInstance()->Init();
 	FontManager::GetInstance()->Init();
@@ -50,6 +51,8 @@ void CH::Application::Loop()
 			}
 		}
 
+		CH::InputManager::GetInstance()->DoInput();
+
 		for (Entity* entity : _entities) {
 			entity->Update(deltaTime);
 		}
@@ -57,8 +60,6 @@ void CH::Application::Loop()
 		for (Entity* entity : _entities) {
 			entity->LateUpdate(deltaTime);
 		}
-
-		CH::InputManager::GetInstance()->DoInput();
 
 		_physics.Update(deltaTime);
 

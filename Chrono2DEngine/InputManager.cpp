@@ -26,6 +26,17 @@ void CH::InputManager::RemoveInput(std::string inputName)
 	_allInputs.erase(inputName);
 }
 
+bool CH::InputManager::GetInput(std::string inputName)
+{
+	for (auto& [key, value] : _allInputs) {
+		if (key == inputName) {
+			return value->IsPressed;
+		}
+	}
+
+	return false;
+}
+
 CH::InputManager* CH::InputManager::GetInstance()
 {
 	if (_instance == nullptr) {

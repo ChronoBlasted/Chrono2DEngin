@@ -15,6 +15,8 @@ namespace CH {
 		void SetLinearVelocity(b2Vec2 newLinearVelocity);
 		void SetAngularVelocity(float newAngularVelocity);
 
+		void ApplyForce(b2Vec2 newForce);
+
 		b2Vec2 GetPosition();
 		float GetAngle();
 		b2Vec2 GetLinearVelocity();

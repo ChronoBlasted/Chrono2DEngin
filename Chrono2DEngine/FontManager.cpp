@@ -16,6 +16,7 @@ CH::FontManager::~FontManager()
 void CH::FontManager::Init()
 {
 	LoadFont("Poppins");
+	LoadFont("Arial");
 }
 
 CH::FontManager* CH::FontManager::GetInstance()
@@ -31,13 +32,10 @@ sf::Font* CH::FontManager::GetFont(std::string fontName)
 {
 	sf::Font* resultFont = nullptr;;
 
-	if (auto search = _allFonts.find(fontName); search != _allFonts.end())
-	{
-		resultFont = search->second;
-	}
-	else
-	{
-		std::cout << "Not found\n";
+	for (auto& [key, value] : _allFonts) {
+		if (key == fontName) {
+			resultFont = value;
+		}
 	}
 
 	return resultFont;
@@ -47,13 +45,13 @@ void CH::FontManager::LoadFont(std::string fontName)
 {
 	std::string pathToFont = CH::RessourceManager::GetInstance()->GetPathById(fontName);
 
-	sf::Font font;
-	if (!font.loadFromFile(pathToFont))
+	sf::Font* font = new sf::Font();
+	if (!font->loadFromFile(pathToFont))
 	{
 		std::cout << "Error loading " << pathToFont << " font file" << std::endl;
 	}
 	else
 	{
-		_allFonts.insert({ fontName, &font });
+		_allFonts.insert({ fontName, font });
 	}
 }

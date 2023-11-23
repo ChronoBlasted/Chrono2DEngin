@@ -1,5 +1,6 @@
 #include "SpriteRenderer.h"
 #include "RessourceManager.h"
+#include <iostream>
 
 
 void CH::SpriteRenderer::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -9,7 +10,7 @@ void CH::SpriteRenderer::draw(sf::RenderTarget& target, sf::RenderStates states)
 
 CH::SpriteRenderer::SpriteRenderer()
 {
-	_texture.create(256, 256);
+	_texture.create(24, 24);
 	_sprite.setTexture(_texture);
 }
 
@@ -39,6 +40,11 @@ void CH::SpriteRenderer::SetSmooth(bool isSmooth)
 void CH::SpriteRenderer::SetRepeated(bool isRepeated)
 {
 	_texture.setRepeated(isRepeated);
+}
+
+void CH::SpriteRenderer::UpdateSize(int scaleX, int scaleY)
+{
+	_sprite.setScale(scaleX, scaleY);
 }
 
 sf::Sprite* CH::SpriteRenderer::GetSprite()

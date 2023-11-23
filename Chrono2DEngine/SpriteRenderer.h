@@ -11,10 +11,12 @@ namespace CH {
 		SpriteRenderer();
 		~SpriteRenderer();
 
-		void SetTexture(std::string textureId);
-		void SetColor(sf::Color newColor);
-		void SetSmooth(bool isSmooth);
-		void SetRepeated(bool isRepeated);
+		void SetTexture(std::string);
+		void SetColor(sf::Color);
+		void SetSmooth(bool);
+		void SetRepeated(bool);
+
+		void UpdateSize(int, int);
 
 		sf::Sprite* GetSprite();
 	protected:
