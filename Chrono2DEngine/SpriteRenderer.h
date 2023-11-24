@@ -13,9 +13,11 @@ namespace CH {
 
 		void SetTexture(std::string);
 		void SetColor(sf::Color);
+		void SetOrigin(int originX, int originY);
 		void SetSmooth(bool);
 		void SetRepeated(bool);
 
+		void UpdateScale(int, int);
 		void UpdateSize(int, int);
 
 		sf::Sprite* GetSprite();

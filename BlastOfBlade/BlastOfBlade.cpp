@@ -9,6 +9,7 @@
 #include <Chrono2DEngine/TextMeshPro.h>
 #include <Chrono2DEngine/InputManager.h>
 #include <Chrono2DEngine/MovementController.h>
+#include "BlastOfBlade.h"
 
 int main()
 {
@@ -43,30 +44,42 @@ int main()
 	CH::InputManager::GetInstance()->AddInput("RightClick", RightClick);
 #pragma endregion
 
-	// Ground
 
-	CH::Entity* groundEntity = app->CreateEntity("Ground");
+#pragma region Bounds
 
-	CH::SpriteRenderer* spriteRendererSquare = app->CreateComponent<CH::SpriteRenderer>(*groundEntity);
-	spriteRendererSquare->SetTexture("TopGrass");
-	spriteRendererSquare->UpdateSize(10, 1);
-	spriteRendererSquare->SetRepeated(true);
+	CreateStaticEntity(app, "TopGrass", 0, 128, 48, 1);
+	CreateStaticEntity(app, "OrangeCube", 423, -96, 1, 24);
+	CreateStaticEntity(app, "OrangeCube", -423, -96, 1, 24);
+	CreateStaticEntity(app, "OrangeCube", 0, -321, 48, 1);
 
-	CH::Rigidbody* groundRigidbody = app->CreateComponent<CH::Rigidbody>(*groundEntity);
-	b2Vec2 groundPos;
-	groundPos.Set(0.0f, 200);
-	groundRigidbody->SetPosition(groundPos, 0);
+#pragma endregion
 
-	CH::BoxCollider* groundBoxCollider = app->CreateComponent<CH::BoxCollider>(*groundEntity);
-	groundBoxCollider->SetSize(24, 24);
+	CH::Entity* playerEntity = CreatePlayer(app);
+	CreateCamera(app, playerEntity);
 
-	groundBoxCollider->CreateFixture(groundRigidbody->GetBody());
+	app->Loop();
 
-	// Player
+	return 0;
+}
 
-	CH::Entity* playerEntity = app->CreateEntity("Circle");
+void CreateCamera(CH::Application* app, CH::Entity* playerEntity)
+{
+
+	CH::Camera* gameView = app->CreateComponent<CH::Camera>(*playerEntity);
+	gameView->SetFollow(playerEntity);
+	gameView->SetZoom(.5f);
+
+	CH::TextMeshPro* textMeshPro = app->CreateComponent<CH::TextMeshPro>(*playerEntity);
+	textMeshPro->SetString("Score : ");
+	textMeshPro->SetPosition(-448, -256);
+}
+CH::Entity* CreatePlayer(CH::Application* app)
+{
+	CH::Entity* playerEntity = app->CreateEntity("Player");
 	CH::SpriteRenderer* playerSprite = app->CreateComponent<CH::SpriteRenderer>(*playerEntity);
 	playerSprite->SetTexture("Player");
+	playerSprite->SetOrigin(12, 12);
+
 
 	CH::Rigidbody* playerRb = app->CreateComponent<CH::Rigidbody>(*playerEntity);
 	b2Vec2 playerPos;
@@ -85,21 +98,58 @@ int main()
 	CH::MovementController* movementController = app->CreateComponent<CH::MovementController>(*playerEntity);
 
 	movementController->SetupBind("MoveLeft", "MoveUp", "MoveDown", "MoveRight");
-	movementController->SetSpeed(1000000);
+	movementController->SetSpeed(100000);
+
+	return playerEntity;
+}
+
+CH::Entity* CreateEnemy(CH::Application* app)
+{
+	CH::Entity* playerEntity = app->CreateEntity("Player");
+	CH::SpriteRenderer* playerSprite = app->CreateComponent<CH::SpriteRenderer>(*playerEntity);
+	playerSprite->SetTexture("Player");
+	playerSprite->SetOrigin(12, 12);
 
 
+	CH::Rigidbody* playerRb = app->CreateComponent<CH::Rigidbody>(*playerEntity);
+	b2Vec2 playerPos;
+	playerPos.Set(0, 0);
+	playerRb->SetPosition(playerPos, 0);
+	playerRb->SetType(b2_dynamicBody);
 
-	// Camera
+	CH::BoxCollider* circleBoxCollider = app->CreateComponent<CH::BoxCollider>(*playerEntity);
+	circleBoxCollider->SetSize(24, 24);
+	circleBoxCollider->SetDensity(1);
+	circleBoxCollider->SetFriction(.3f);
 
-	CH::Camera* gameView = app->CreateComponent<CH::Camera>(*playerEntity);
-	gameView->SetFollow(playerEntity);
-	gameView->SetZoom(.5f);
+	circleBoxCollider->CreateFixture(playerRb->GetBody());
 
-	CH::TextMeshPro* textMeshPro = app->CreateComponent<CH::TextMeshPro>(*playerEntity);
-	textMeshPro->SetString("Score : ");
-	textMeshPro->SetPosition(-448, -256);
+	CH::CollisionChecker* collisionChecker = app->CreateComponent<CH::CollisionChecker>(*playerEntity);
+	CH::MovementController* movementController = app->CreateComponent<CH::MovementController>(*playerEntity);
 
-	app->Loop();
+	movementController->SetupBind("MoveLeft", "MoveUp", "MoveDown", "MoveRight");
+	movementController->SetSpeed(100000);
 
-	return 0;
+	return playerEntity;
+}
+
+void CreateStaticEntity(CH::Application* app, std::string spriteName, int posX, int posY, int sizeX, int sizeY)
+{
+	CH::Entity* entity = app->CreateEntity(spriteName);
+
+	CH::SpriteRenderer* spriteRenderer = app->CreateComponent<CH::SpriteRenderer>(*entity);
+	spriteRenderer->SetTexture(spriteName);
+	spriteRenderer->SetRepeated(true);
+	spriteRenderer->UpdateSize(1 * sizeX, 1 * sizeY);
+	spriteRenderer->SetOrigin(spriteRenderer->GetSprite()->getLocalBounds().getSize().x / 2, spriteRenderer->GetSprite()->getLocalBounds().getSize().y / 2);
+
+	CH::Rigidbody* rigidbody = app->CreateComponent<CH::Rigidbody>(*entity);
+	b2Vec2 groundPos;
+	groundPos.Set(posX, posY);
+	rigidbody->SetPosition(groundPos, 0);
+
+	CH::BoxCollider* boxCollider = app->CreateComponent<CH::BoxCollider>(*entity);
+	boxCollider->SetSize(18 * sizeX, 18 * sizeY);
+
+	boxCollider->CreateFixture(rigidbody->GetBody());
 }

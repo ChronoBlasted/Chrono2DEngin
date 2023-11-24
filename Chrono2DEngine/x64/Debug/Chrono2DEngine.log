@@ -1,2 +1,22 @@
-﻿  Rigidbody.cpp
+﻿  Application.cpp
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,44): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'YAML::Exception'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\stdexcept(101,19): message : voir la déclaration de 'std::runtime_error'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,20): message : voir la déclaration de 'YAML::Exception'
+  SpriteRenderer.cpp
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,44): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'YAML::Exception'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\stdexcept(101,19): message : voir la déclaration de 'std::runtime_error'
+C:\Users\alexi\Documents\GitHub\vcpkg\installed\x64-windows\include\yaml-cpp\exceptions.h(153,20): message : voir la déclaration de 'YAML::Exception'
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\SpriteRenderer.cpp(34,42): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\SpriteRenderer.cpp(34,33): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\SpriteRenderer.cpp(49,27): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\alexi\source\repos\Chrono2DEngine\Chrono2DEngine\SpriteRenderer.cpp(49,19): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Génération de code en cours...
   Chrono2DEngine.vcxproj -> C:\Users\alexi\source\repos\Chrono2DEngine\x64\Debug\Chrono2DEngine.lib
