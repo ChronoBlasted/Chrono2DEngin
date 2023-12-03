@@ -163,6 +163,7 @@
     <ClInclude Include="Physics.h" />
     <ClInclude Include="RessourceManager.h" />
     <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="Spawner.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="TextMeshPro.h" />
   </ItemGroup>
@@ -194,6 +195,7 @@
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="RessourceManager.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
+    <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="TextMeshPro.cpp" />
   </ItemGroup>

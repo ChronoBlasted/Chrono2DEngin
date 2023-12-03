@@ -26,6 +26,8 @@ void CH::Application::Init(int sizeX = 800, int sizeY = 600, std::string windowN
 	FontManager::GetInstance()->Init();
 
 	Window.create(sf::VideoMode(sizeX, sizeY), windowName);
+	Window.setFramerateLimit(144);
+
 }
 
 void CH::Application::Loop()

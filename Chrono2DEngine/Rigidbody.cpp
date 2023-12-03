@@ -52,7 +52,6 @@ void CH::Rigidbody::SetAngularVelocity(float newAngularVelocity)
 void CH::Rigidbody::ApplyForce(b2Vec2 newForce)
 {
 	if (_body != nullptr) {
-		std::cout << "Test" << std::endl;
 		_body->ApplyForceToCenter(newForce,true);
 	}
 }

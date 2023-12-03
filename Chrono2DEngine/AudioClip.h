@@ -3,7 +3,7 @@
 #include <string>
 
 namespace CH {
-	class AudioClip
+	class AudioClip 
 	{
 	public:
 		void LoadMusic(std::string musicName);

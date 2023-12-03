@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <Chrono2DEngine/Application.h>
+#include <Chrono2DEngine/AudioClip.h>
+#include <Chrono2DEngine/AudioManager.h>
 #include <Chrono2DEngine/SpriteRenderer.h>
 #include <Chrono2DEngine/Camera.h>
 #include <Chrono2DEngine/Rigidbody.h>
@@ -10,6 +12,7 @@
 #include <Chrono2DEngine/InputManager.h>
 #include <Chrono2DEngine/MovementController.h>
 #include "BlastOfBlade.h"
+#include <Chrono2DEngine/Spawner.h>
 
 int main()
 {
@@ -43,8 +46,6 @@ int main()
 	RightClick->SetBind(sf::Mouse::Right);
 	CH::InputManager::GetInstance()->AddInput("RightClick", RightClick);
 #pragma endregion
-
-
 #pragma region Bounds
 
 	CreateStaticEntity(app, "TopGrass", 0, 128, 48, 1);
@@ -53,9 +54,21 @@ int main()
 	CreateStaticEntity(app, "OrangeCube", 0, -321, 48, 1);
 
 #pragma endregion
+#pragma region Enemy
+	CH::Entity* spanerEntity = app->CreateEntity("Spawner");
+	CH::Spawner* enemySpawner = app->CreateComponent<CH::Spawner>(*spanerEntity);
+	enemySpawner->spawnInterval = sf::seconds(1);
 
+#pragma endregion
+#pragma region Audio
+
+	CH::AudioManager::GetInstance()->PlayMusic("Menu");
+
+#pragma endregion
+#pragma region Player
 	CH::Entity* playerEntity = CreatePlayer(app);
 	CreateCamera(app, playerEntity);
+#pragma endregion
 
 	app->Loop();
 
@@ -70,7 +83,7 @@ void CreateCamera(CH::Application* app, CH::Entity* playerEntity)
 	gameView->SetZoom(.5f);
 
 	CH::TextMeshPro* textMeshPro = app->CreateComponent<CH::TextMeshPro>(*playerEntity);
-	textMeshPro->SetString("Score : ");
+	textMeshPro->SetString("Score : 0");
 	textMeshPro->SetPosition(-448, -256);
 }
 CH::Entity* CreatePlayer(CH::Application* app)
@@ -103,35 +116,6 @@ CH::Entity* CreatePlayer(CH::Application* app)
 	return playerEntity;
 }
 
-CH::Entity* CreateEnemy(CH::Application* app)
-{
-	CH::Entity* playerEntity = app->CreateEntity("Player");
-	CH::SpriteRenderer* playerSprite = app->CreateComponent<CH::SpriteRenderer>(*playerEntity);
-	playerSprite->SetTexture("Player");
-	playerSprite->SetOrigin(12, 12);
-
-
-	CH::Rigidbody* playerRb = app->CreateComponent<CH::Rigidbody>(*playerEntity);
-	b2Vec2 playerPos;
-	playerPos.Set(0, 0);
-	playerRb->SetPosition(playerPos, 0);
-	playerRb->SetType(b2_dynamicBody);
-
-	CH::BoxCollider* circleBoxCollider = app->CreateComponent<CH::BoxCollider>(*playerEntity);
-	circleBoxCollider->SetSize(24, 24);
-	circleBoxCollider->SetDensity(1);
-	circleBoxCollider->SetFriction(.3f);
-
-	circleBoxCollider->CreateFixture(playerRb->GetBody());
-
-	CH::CollisionChecker* collisionChecker = app->CreateComponent<CH::CollisionChecker>(*playerEntity);
-	CH::MovementController* movementController = app->CreateComponent<CH::MovementController>(*playerEntity);
-
-	movementController->SetupBind("MoveLeft", "MoveUp", "MoveDown", "MoveRight");
-	movementController->SetSpeed(100000);
-
-	return playerEntity;
-}
 
 void CreateStaticEntity(CH::Application* app, std::string spriteName, int posX, int posY, int sizeX, int sizeY)
 {

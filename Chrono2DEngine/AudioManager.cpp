@@ -8,7 +8,7 @@ void CH::AudioManager::PlayMusic(std::string musicName)
 
 	newAudio->LoadMusic(musicName);
 	newAudio->Play();
-
+	newAudio->SetVolume(2);
 	_allAudioClips.insert({ musicName, newAudio });
 }
 
